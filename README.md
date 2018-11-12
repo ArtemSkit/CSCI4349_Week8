@@ -1,6 +1,6 @@
 # Project 8 - Pentesting Live Targets
 
-Time spent: **X** hours spent in total
+Time spent: **51** hours spent in total
 
 > Objective: Identify vulnerabilities in three different versions of the Globitek website: blue, green, and red.
 
@@ -123,5 +123,5 @@ See the code for the page <a href="./html/index.html">here</a>
 
 ## Notes
 
-Any user can be deleted, which creates a situation where noone can log into the website.
+Any user can be deleted, which creates a situation where noone can log into the website.  
 Any user can use XSS to redirect away from the "Feedback" page, which creates a situation where noone can use this page.
