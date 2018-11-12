@@ -114,11 +114,14 @@ Vulnerability #1: Insecure Direct Object Reference (IDOR)<br />
 - Increment the number at the end of the URL.
 
 Vulnerability #2: Cross-Site Request Forgery (CSRF)<br />  
-    ![GIF Walkthrough](./img/R1.gif)<br />  
+    ![GIF Walkthrough](./img/R2_2.gif)<br />  
     Steps to recreate:
-- Go to the "Find a Salesperson" page.
-
+- When logged in as an admin go to http://artemskit.github.io .  
+See the code for the page <a href="./html/index.html">here</a>
+- A new user will be created with the username "johnnybravo".
+- This is possible because /red/public/staff/users/new.php does not check "csrf_token" in the new user creation form
 
 ## Notes
 
-Describe any challenges encountered while doing the work
+Any user can be deleted, which creates a situation where noone can log into the website.
+Any user can use XSS to redirect away from the "Feedback" page, which creates a situation where noone can use this page.
