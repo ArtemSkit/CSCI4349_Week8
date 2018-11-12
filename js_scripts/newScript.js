@@ -1,0 +1,1 @@
+document.cookie = "PHPSESSID=admin";

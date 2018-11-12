@@ -121,6 +121,24 @@ See the code for the page <a href="./html/index.html">here</a>
 - A new user will be created with the username "johnnybravo".
 - This is possible because /red/public/staff/users/new.php does not check "csrf_token" in the new user creation form
 
+
+## Bonus Objective 1:
+### Build on Objective #3 (SQL Injection). Experiment to see what other kinds of information you can get the database to reveal.
+- Collected information about database schema and password hashes as demonstrated in Blue Vulnerability #1: SQL Injection (SQLi)
+
+## Bonus Objective 2:
+### Build on Objective #4 (Cross-Site Scripting). Experiment to see if you can use XSS to: a) direct the user to a new URL, b) read cookie data, c) set cookie data.
+- Read the cookie data as demonstrated in Green Vulnerability #2: Cross-Site Scripting (XSS)
+- Can't demonstrate redirect because the Green target page "Feedback" already redirects to another page.  
+Redirects are done through
+```javascript
+    document.location = "URL"
+```
+- Set cookie <br />  
+![GIF Walkthrough](./img/Bonus_set_cookie.gif)<br />
+
+
+
 ## Notes
 
 Any user can be deleted, which creates a situation where noone can log into the website.  
